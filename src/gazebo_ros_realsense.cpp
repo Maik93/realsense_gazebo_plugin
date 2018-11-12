@@ -170,6 +170,10 @@ namespace
     info_msg.P[6] = info_msg.K[5];
     info_msg.P[10] = info_msg.K[8];
 
+    // no distortions
+    info_msg.distortion_model = "plumb_bob";
+    info_msg.D = {0, 0, 0, 0, 0};
+
     return info_msg;
   }
 }
