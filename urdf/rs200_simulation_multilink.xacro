@@ -40,7 +40,7 @@
     <!-- Place camera rigidly connected to box frame -->
     <joint name="realsense_joint" type="fixed">
         <parent link="box"/>
-        <child link="rs200_camera"/>
+        <child link="camera_link"/>
         <origin rpy="0 0 0" xyz="0 0 0.2"/>
     </joint>
 </robot>
