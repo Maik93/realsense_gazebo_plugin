@@ -42,11 +42,18 @@
         </inertial>
     </link>
 
+    <!-- Connect camera to parent frame-->
+    <joint name="${prefix}realsense_joint" type="fixed">
+        <parent link="${parent}"/>
+        <child link="${prefix}rs200_camera"/>
+        <xacro:insert_block name="origin"/>
+    </joint>
+
     <!-- Virtual links representing the cameras positons and orientations-->
-    <link name="color" />
-    <link name="depth" />
-    <link name="ired1" />
-    <link name="ired2" />
+    <link name="${prefix}color" />
+    <link name="${prefix}depth" />
+    <link name="${prefix}ired1" />
+    <link name="${prefix}ired2" />
 
     <!-- Joints positioning the virtual links with respect to the camera main link-->
     <joint name="color_joint" type="fixed">

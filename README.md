@@ -1,5 +1,11 @@
 # Intel RealSense Gazebo ROS plugin and model
 
+## _**Important note**_
+
+**This branch only supports ROS Melodic with Gazebo 9.**
+
+**To use this plugin with ROS Kinetic and Gazebo 7 you should use the [`kinetic-devel` branch](https://github.com/SyrianSpock/realsense_gazebo_plugin/tree/kinetic-devel).**
+
 ## Quickstart
 
 Build the plugin
@@ -51,7 +57,7 @@ Here is an example of how to attach the Realsense to other links; the URDF used 
 
 This requires Gazebo 6 or higher and catkin tools for building.
 
-The package has been tested on ROS indigo on Ubuntu 14.04 with Gazebo 7.
+The package has been tested on ROS melodic on Ubuntu 18.04 with Gazebo 9.
 
 ## Acknowledgement
 
