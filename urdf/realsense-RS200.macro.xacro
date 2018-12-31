@@ -14,10 +14,10 @@
     See urdf/rs200_simulation_multilink.xacro for details.
 -->
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
-<xacro:macro name="realsense-rs200" params="parent_link:='rs200_camera' origin_x:=0 origin_y:=0 origin_z:=0">
+<xacro:macro name="realsense-rs200" params="parent_link:='camera_link' origin_x:=0 origin_y:=0 origin_z:=0">
 
     <!-- Camera link -->
-    <link name="rs200_camera">
+    <link name="camera_link">
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0"/>
             <geometry>
@@ -50,7 +50,7 @@
 
     <!-- Joints positioning the virtual links with respect to the camera main link-->
     <joint name="color_joint" type="fixed">
-        <parent link="rs200_camera" />
+        <parent link="camera_link" />
         <child link="color" />
         <!-- <origin xyz="0 -0.046 0.004" rpy="0 0 0"/> -->
         <!-- The default position is changed since in Rviz the cloud depth axis is Z not X-->
@@ -58,19 +58,19 @@
     </joint>
 
     <joint name="depth_joint" type="fixed">
-        <parent link="rs200_camera" />
+        <parent link="camera_link" />
         <child link="depth" />
         <origin xyz="0 -0.03 0.004" rpy="0 0 0"/>
     </joint>
 
     <joint name="ired1_joint" type="fixed">
-        <parent link="rs200_camera" />
+        <parent link="camera_link" />
         <child link="ired1" />
         <origin xyz="0 -0.06 0.004" rpy="0 0 0"/>
     </joint>
 
     <joint name="ired2_joint" type="fixed">
-        <parent link="rs200_camera" />
+        <parent link="camera_link" />
         <child link="ired2" />
         <origin xyz="0 0.01 0.004" rpy="0 0 0"/>
     </joint>
@@ -120,7 +120,7 @@
             </noise>
             </camera>
             <always_on>1</always_on>
-            <update_rate>60</update_rate>
+            <update_rate>30</update_rate>
             <visualize>1</visualize>
         </sensor>
         <sensor name="ired1" type="camera">
@@ -128,8 +128,8 @@
             <camera name="__default__">
             <horizontal_fov>1.047</horizontal_fov>
             <image>
-                <width>640</width>
-                <height>480</height>
+                <width>480</width>
+                <height>360</height>
                 <format>L_INT8</format>
             </image>
             <clip>
@@ -143,7 +143,7 @@
             </noise>
             </camera>
             <always_on>1</always_on>
-            <update_rate>60</update_rate>
+            <update_rate>30</update_rate>
             <visualize>0</visualize>
         </sensor>
         <sensor name="ired2" type="camera">
@@ -151,8 +151,8 @@
             <camera name="__default__">
             <horizontal_fov>1.047</horizontal_fov>
             <image>
-                <width>640</width>
-                <height>480</height>
+                <width>480</width>
+                <height>360</height>
                 <format>L_INT8</format>
             </image>
             <clip>
@@ -166,7 +166,7 @@
             </noise>
             </camera>
             <always_on>1</always_on>
-            <update_rate>60</update_rate>
+            <update_rate>30</update_rate>
             <visualize>0</visualize>
         </sensor>
         <sensor name="depth" type="depth">
@@ -174,8 +174,8 @@
             <camera name="__default__">
             <horizontal_fov>1.047</horizontal_fov>
             <image>
-                    <width>640</width>
-                    <height>480</height>
+                    <width>480</width>
+                    <height>360</height>
             </image>
             <clip>
                     <near>0.1</near>
@@ -188,7 +188,7 @@
             </noise>
             </camera>
             <always_on>1</always_on>
-            <update_rate>60</update_rate>
+            <update_rate>30</update_rate>
             <visualize>0</visualize>
         </sensor>
     </gazebo>

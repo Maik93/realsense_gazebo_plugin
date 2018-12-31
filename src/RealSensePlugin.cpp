@@ -19,10 +19,10 @@
 #include <gazebo/rendering/DepthCamera.hh>
 #include <gazebo/sensors/sensors.hh>
 
-#define DEPTH_PUB_FREQ_HZ 60
-#define COLOR_PUB_FREQ_HZ 60
-#define IRED1_PUB_FREQ_HZ 60
-#define IRED2_PUB_FREQ_HZ 60
+#define DEPTH_PUB_FREQ_HZ 30
+#define COLOR_PUB_FREQ_HZ 30
+#define IRED1_PUB_FREQ_HZ 30
+#define IRED2_PUB_FREQ_HZ 30
 
 #define DEPTH_CAMERA_TOPIC "depth"
 #define COLOR_CAMERA_TOPIC "color"

@@ -17,7 +17,7 @@
     <!-- Place camera referenced to world frame -->
     <joint name="realsense_joint" type="fixed">
         <parent link="world"/>
-        <child link="rs200_camera"/>
+        <child link="camera_link"/>
         <origin rpy="0 0 0" xyz="0 0 1.0"/>
     </joint>
 </robot>
